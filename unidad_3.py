@@ -1,4 +1,4 @@
-from unit_1 import Paciente
+from unidad_1 import Paciente
 
 class NodoPaciente ():
     def __init__(self, paciente):

@@ -11,10 +11,10 @@ red_hospitales.add_node("Clínica C")
 red_hospitales.add_node("Clínica D")
 
 # Añadir aristas con distancias
-red_hospitales.add_edge("Hospital A", "Hospital B", weight=10)  # 10 minutos
-red_hospitales.add_edge("Hospital A", "Clínica C", weight=15)  # 15 minutos
-red_hospitales.add_edge("Hospital B", "Clínica D", weight=5)   # 5 minutos
-red_hospitales.add_edge("Clínica C", "Clínica D", weight=20)   # 20 minutos
+red_hospitales.add_edge("Hospital A", "Hospital B", weight=10)  
+red_hospitales.add_edge("Hospital A", "Clínica C", weight=15)  
+red_hospitales.add_edge("Hospital B", "Clínica D", weight=5)   
+red_hospitales.add_edge("Clínica C", "Clínica D", weight=20) 
 
 # Dibujar el grafo
 pos = nx.spring_layout(red_hospitales)  # Layout para posicionar los nodos
@@ -28,3 +28,5 @@ nx.draw_networkx_edge_labels(red_hospitales, pos, edge_labels=distances)
 # Mostrar el grafo
 plt.title("Red de Hospitales y Clínicas")
 plt.show()
+
+

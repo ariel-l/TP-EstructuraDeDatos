@@ -1,4 +1,4 @@
-class Paciente ():
+class Paciente:
     def __init__(self, nombre, edad, ID, email, numero, cobertura):
         self.nom = nombre
         self.edad = edad
@@ -6,51 +6,38 @@ class Paciente ():
         self.email = email
         self.num = numero
         self.cob = cobertura
-        self.historial = []
+        self.historial = []  # Historial vacío
+
     def __repr__(self):
-        return f"Paciente(ID={self.ID}, nombre={self.nom})"
+        return f"Paciente(ID={self.ID}, nombre={self.nom}, edad={self.edad}, email={self.email})"
     
-    def añadir_historial (self, paciente):
-        self.historial.append(paciente)
-        print (f"Evento añadido correctamente")
+    def añadir_historial(self, evento):
+        self.historial.append(evento)
+        print(f"Evento '{evento}' añadido correctamente.")
     
-    def eliminar_historial (self, descripcion):
-        for elemento in self.historial:
-            if elemento == descripcion:
-                self.historial.remove(elemento)
-                return
-        print(f"La descripcion ingresada no existe")
-    
-    def modificar_info (self, codigo, nombre, edad, email, numero):
+    def eliminar_historial(self, descripcion):
+        if descripcion in self.historial:
+            self.historial.remove(descripcion)
+            print(f"Evento '{descripcion}' eliminado correctamente.")
+        else:
+            print(f"No se encontró el evento: {descripcion}")
+
+    def modificar_info(self, codigo, nombre=None, edad=None, email=None, numero=None):
         if codigo == self.ID:
-            self.nom = nombre
-            self.edad = edad
-            self.mail = email
-            self.num = numero
-
-# Crear un paciente
-paciente = Paciente("Juan Pérez", 30, 1234, "juan.perez@gmail.com", "123456789", "OSDE")
-
-# Añadir eventos al historial
-paciente.añadir_historial("Consulta inicial por dolor de cabeza")
-paciente.añadir_historial("Diagnóstico de migraña")
-paciente.añadir_historial("Tratamiento con analgésicos")
-
-# Mostrar historial
-print("\nHistorial actual:")
-print(paciente.historial)
-
-# Eliminar un evento del historial
-paciente.eliminar_historial("Diagnóstico de migraña")
-
-# Mostrar historial actualizado
-print("\nHistorial actualizado:")
-print(paciente.historial)
-
-# Modificar información del paciente
-paciente.modificar_info(1234, nombre="Juan Carlos Pérez", edad=45, email="juan.carlos@gmail.com", numero=12345678)
-
-# Mostrar información actualizada
-print("\nInformación actualizada del paciente:")
-print(paciente)
- 
+            if nombre: self.nom = nombre
+            if edad: self.edad = edad
+            if email: self.email = email
+            if numero: self.num = numero
+            print("Información actualizada correctamente.")
+        else:
+            print("Código incorrecto. No se puede modificar la información.")
+    
+    def mostrar_informacion(self):
+        print(f"--- Información del Paciente ---")
+        print(f"Nombre: {self.nom}")
+        print(f"Edad: {self.edad}")
+        print(f"ID: {self.ID}")
+        print(f"Email: {self.email}")
+        print(f"Número: {self.num}")
+        print(f"Cobertura: {self.cob}")
+        print(f"Historial: {self.historial}")
