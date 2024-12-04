@@ -1,0 +1,36 @@
+Recordando:
+O(n) (Lineal): El tiempo que toma el algoritmo crece directamente proporcional al tamaño de los datos.
+
+
+O(logn) (Logarítmico): El tiempo que toma el algoritmo crece mucho más lento que el tamaño de los datos, porque reduce el problema a la mitad en cada paso.
+
+
+Analisis de eficiencia de "Inserción en árbol binario" (unidad 3):
+
+- Tiempo:
+ Para los métodos insertar, buscar y eliminar se aplica lo siguiente: 
+ . Si el arbol está equilibrado, el mejor caso es O(logn) ya que cada busqueda solo necesita recorrer la altura del arbol y se encontraria más rapido lo que necesitamos.
+
+ En cambio para el método "en_orden" siempre se usa O(n) ya que visita cada nodo.
+ . Si el arbol está desordenado, usariamos O(n) recorriendo todos los nodos en el peor de los casos.
+
+- Espacio:
+ . Dependera de si el arbol esta equilibrado o no, ya que solo usamos la memoria para la parte del arbol que se esté recorriendo, para el peor de los casos (O(n)) esto puede llegar a ser mucho.
+
+
+Analisis de eficiencia de "Recorrido en arbol general" (unidad 4):
+
+- Tiempo:
+ . Al usar el método "mostrar_historial" se recorre el árbol general de manera jerárquica con una función recursiva, haciendo que se visite cada nodo exactamente una vez, entonces estariamos ante un recorrido O(n).
+
+- Espacio:
+ . Como la unidad anterior, dependera de la profundidad del arbol.
+
+Analisis de eficiencia de "Búsqueda en cola de prioridad" (unidad 5):
+
+- Tiempo:
+ . El módulo heapq que se importa junto a sus métodos usados tiene una complejidad de O(logn), ya que los pacientes son atendidos dependiendo su gravedad (cola de prioridad) optimizando así el tiempo para los menos graves.
+ Cabe aclarar que mostrar_pacientes al ordenarla usamos O(logn) pero al recorrerla linealmente O(n)
+
+- Espacio:
+ . El espacio de esta estructura depende de la cantida de pacientes que se tenga, entonces será O(n)
